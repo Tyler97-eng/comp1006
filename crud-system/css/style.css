@@ -1,0 +1,262 @@
+/*************************************/
+/* General styling for documents */
+/************************************/
+body{
+  /* remove white space margins */
+  margin: 0px;
+  /* white colour chosen to cover background */
+  background-color: #FFF;
+}
+header{
+  grid-area: header;
+  /* header fixed to top of page */
+  position: fixed;
+  /* high z-index to remain visible above other elements */
+  z-index: 9999;
+  width: 100%;
+  height: 15vh;
+  /* sky blue background for header */
+  background-color: #87CEEB;
+  display: grid;
+  /* grid columns divided between logo and nav */
+  grid-template-columns: 70% 30%;
+  align-items: center;
+}
+/* logo container size set */
+.logo{
+  height: 12vh;
+  width: auto;
+  padding-left: 5%;
+}
+.logo > a > img{
+  width: auto;
+  height: 100%;
+}
+/* nav elements split into sizes that add up to 100% */
+header > nav > ul{
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  list-style: none;
+}
+/* li elements text styling */
+header > nav > ul > li{
+  text-align: center;
+  font-family: 'Roboto', cursive;
+  font-weight: bold;
+  font-size: 22px;
+}
+/* white text color and a removal of underlines */
+header > nav > ul > li > a{
+  color: #FFF;
+  text-decoration: none;
+}
+/* majority of h elements targeted */
+h1,h2,h3,h6{
+  font-family: 'Roboto', cursive;
+  /* sky blue text colour */
+  color: #87CEEB;
+  text-align: center;
+}
+/* all p elements targeted */
+p{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/* general footer styling */
+footer{
+  grid-area: footer;
+  display: grid;
+  /* grid columns set to four 25% columns */
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* sky blue for background just like the header */
+  background-color: #87CEEB;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+/* h4 and h5 in footer styling set */
+h4,h5{
+  color: #FFF;
+}
+/* a in footer styling set */
+a{
+  color: #FFF;
+  text-decoration: none;
+}
+/* styling for p elements in footer to match a element styling */
+.last p{
+  color: #FFF;
+  font-size: 14px;
+  text-align: center;
+  /* padding removed */
+  padding: 0%;
+}
+
+/*************************************/
+/******* CSS for home page ***********/
+/************************************/
+/* body styling to define grid areas */
+.home{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "masthead"
+  "welcome"
+  "columns"
+  "footer";
+}
+/* section 1 with image and h1 in foreground */
+.masthead{
+  grid-area: masthead;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100vh;
+  /* image from: https://svitla.com/uploads/0/2135-database_management_software.jpg */
+  background-image: url('../img/database.jpg');
+  /* image covers background and is centered */
+  background-size: cover;
+  background-position: center;
+}
+/* div containing h1 aligned in center */
+.masthead div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h1 styling */
+.masthead div h1{
+  color: #FFF;
+  font-size: 50px;
+  padding-bottom: 2vh;
+}
+/* section 2 with welcome message */
+.welcome{
+  grid-area: welcome;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+}
+/* padding to top of h2 div */
+.welcome div{
+  padding-top: 5vh;
+}
+/* section 3 with three columns */
+.columns{
+  grid-area: columns;
+  display: grid;
+  /* three columns are given equal grid columns of 33% */
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+}
+
+/*************************************/
+/******** CSS for view page *********/
+/************************************/
+/* body styling to define grid areas */
+.database{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "intro"
+  "create"
+  "view"
+  "footer";
+  /* image from: https://3.bp.blogspot.com/-lYWJDgHysqQ/WPcGJkjoHyI/AAAAAAAAfy0/NKp-MnCj-vE0U86xPTvNw1JPhYakg8BzgCLcB/s1600/mysql-backup.png */
+  background-image: url('../img/sql-image.png');
+  /* image added to background that is centred and has an auto size (multiples of image appear across background) */
+  background-position: center;
+  background-size: auto;
+}
+/* section 1 contains h1 and p elements in seperate divs */
+.intro{
+  grid-area: intro;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 10%;
+  padding-bottom: 3%;
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 2 contains create portion of CRUD */
+.create{
+  grid-area: create;
+  display: grid;
+  /* two equal columns per row */
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+/* label elements targeted to alter font styling */
+.create label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  padding: 1vh;
+}
+/* margin added to submit button */
+.submit{
+  margin-top: 3%;
+}
+/* margin added to reset button */
+.reset{
+  margin-top: 3%;
+}
+/* section 3 contains read portion of CRUD */
+.view{
+  grid-area: view;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+  padding-bottom: 5%;
+}
+/* div element containing custom PHP function targeted */
+.view div{
+  display: flex;
+  text-align: right;
+  /* text moved to end of container */
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-decoration: underline;
+  font-size: 30px;
+}
+/* table element has left and right margins and a white background */
+.view table{
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #FFF;
+}
+/* th and td elements have borders surrounding them to help represent an actual table */
+.view th,
+.view td{
+  border: 2px solid #000;
+}
