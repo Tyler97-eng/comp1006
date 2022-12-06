@@ -1,0 +1,819 @@
+/*************************************/
+/* General styling for documents */
+/************************************/
+body{
+  /* remove white space margins and padding */
+  margin: 0px;
+  padding: 0px;
+  /* width set to fill entire page */
+  width: 100%;
+  /* image from: https://m.media-amazon.com/images/M/MV5BMGQ1N2YwZmYtMjliOS00OGVjLWE4MzktZTAzNzRkMzUwNTI3XkEyXkFqcGdeQXVyMTI0NDkxNDU1._V1_FMjpg_UX1000_.jpg */
+  background-image: url('../img/background.jpg');
+  /* image covers background, is centered, and is in absolute position to accomodate other elements */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+header{
+  grid-area: header;
+  /* header fixed to top of page */
+  position: fixed;
+  /* high z-index to remain visible above other elements */
+  z-index: 9999;
+  width: 100%;
+  height: 15vh;
+  /* red background for header */
+  background-color: #FF0000;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+/* logo container size set */
+.logo{
+  height: 12vh;
+  width: auto;
+  margin-top: 2vh;
+}
+/* logo container img size set */
+.logo > a > img{
+  width: auto;
+  height: 100%;
+}
+/* nav elements split into five columns that add up to 100% */
+header > nav > ul{
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  list-style: none;
+}
+/* li elements text styling */
+header > nav > ul > li{
+  text-align: center;
+  font-family: 'Noto Serif Khojki', cursive;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 5vh;
+  margin-right: 7vh;
+}
+/* white text color and a removal of underlines for nav anchor elements */
+header > nav > ul > li > a{
+  color: #FFF;
+  text-decoration: none;
+}
+/* h elements targeted */
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Noto Serif Khojki', cursive;
+  /* white text colour */
+  color: #FFF;
+  text-align: center;
+}
+/* all p elements targeted */
+p{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  /* black text colour */
+  color: #000;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/* general footer styling */
+footer{
+  grid-area: footer;
+  display: grid;
+  /* grid columns set to four equal columns */
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* red for background just like the header */
+  background-color: #FF0000;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+footer h6,
+footer p,
+footer a{
+  /* white text colour for h6, p, and a elements in footer */
+  color: #FFF;
+}
+footer a,
+footer p{
+  /* size set for a and p elements in footer */
+  font-size: 12px;
+}
+/* p elements in last footer div centered and shrunk */
+.last p{
+  text-align: center;
+  font-size: 14px;
+}
+/* last p element (copyright info) slightly larger than other footer p elements and is right-aligned */
+.last p:last-child{
+  font-size: 16px;
+  text-align: right;
+}
+/*************************************/
+/****** Styling for index page ******/
+/************************************/
+/* main styling to define grid areas */
+.home{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "masthead"
+  "welcome"
+  "columns"
+  "join"
+  "footer";
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 with image and h elements in foreground */
+.masthead{
+  grid-area: masthead;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100vh;
+  /* image from: https://cdn.pocket-lint.com/r/s/x1920/assets/images/147514-tv-news-feature-mcu-timeline-image31-vlrstw1hpb.jpg */
+  background-image: url('../img/masthead.jpg');
+  /* image covers background and is centered */
+  background-size: cover;
+  background-position: center;
+}
+/* div containing h1 aligned to flex-start with flex */
+.masthead div{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h1 styling */
+.masthead div h1{
+  /* white colour to be seen on dark background */
+  color: #FFF;
+  font-size: 50px;
+  padding-left: 5%;
+  font-style: italic;
+}
+/* div containing h2 aligned in center with flex */
+.masthead div + div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h2 styling */
+.masthead div + div h2{
+  /* white colour to be seen on dark background */
+  color: #FFF;
+  font-size: 50px;
+  font-style: italic;
+}
+/* div containing h3 aligned with flex-end */
+.masthead div + div + div{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 10%;
+  padding-right: 5%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h2 styling */
+.masthead div + div + div h2{
+  /* white colour to be seen on dark background */
+  color: #FFF;
+  font-size: 50px;
+  font-style: italic;
+}
+/* section 2 with welcome message */
+.welcome{
+  grid-area: welcome;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+}
+/* padding to top of h3 div */
+.welcome div{
+  padding-top: 5vh;
+}
+/* h3 aligned to left with underline and some padding */
+.welcome div h3:nth-child(1){
+  text-align: left;
+  padding-left: 5%;
+  padding-bottom: 5vh;
+  text-decoration: underline;
+  font-style: italic;
+}
+/* padding below last p element */
+.welcome div p:nth-child(4){
+  padding-bottom: 5vh;
+}
+/* section 3 with four columns */
+.columns{
+  grid-area: columns;
+  display: grid;
+  /* four columns are given equal grid columns of 25% */
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 15vh;
+}
+/* borders added to columns */
+.columns div{
+  border-left: 1px solid;
+}
+.columns div:nth-child(4){
+  border-right: 1px solid;
+}
+/* section 4 with join message */
+.join{
+  grid-area: join;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+/* left column has light red background */
+.join1{
+  background-color: rgba(255,160,122, 0.6);
+}
+.join1 a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  /* a element styled as a button */
+  border: 2px solid #000;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #FFF;
+}
+/* right column has black background */
+.join2{
+  background-color: rgba(0,0,0, 0.6);
+}
+.join2 form{
+  padding-left: 10%;
+  margin-bottom: 10px;
+}
+.join2 input{
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.join2 h5,
+.join2 p{
+  /* right column has white text set for h5 and p elements */
+  color: #FFF;
+}
+
+/*************************************/
+/****** Styling for about page ******/
+/************************************/
+/* main styling to define grid areas */
+.about{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "atop"
+  "posts"
+  "footer";
+  /* background body image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 with image and h1 in foreground */
+.atop{
+  grid-area: atop;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+  /* slightly less height than masthead */
+  height: 75vh;
+  /* image from: https://mickeyblog.com/wp-content/uploads/2018/04/Avengers-Infinity-War-movie.jpg */
+  background-image: url('../img/post.jpg');
+  /* image covers background and is centered */
+  background-size: cover;
+  background-position: center;
+}
+/* div containing h1 aligned in center with flex */
+.atop div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h1 styling */
+.atop div h1{
+  /* white colour to be visible over image */
+  color: #FFF;
+  font-size: 50px;
+  padding-bottom: 2vh;
+}
+/* section 2 with table of user posts */
+.posts{
+  grid-area: posts;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+}
+/* div containing h2 and p elements */
+.posts div{
+  /* short height and some top and bottom padding */
+  height: 5fr;
+  width: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+/* table element has left and right margins */
+.posts table{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* th and td elements have black borders surrounding them to represent an actual table */
+.posts th,
+.posts td{
+  border: 2px solid #000;
+}
+/* user icon img size set */
+.posts table tbody tr td:nth-child(1) img{
+  height: 100px;
+  width: auto;
+}
+/* odd table rows have a light red transparent background */
+.posts tr:nth-child(odd){
+  background-color: rgba(255,160,122, 0.2);
+}
+/* even table rows have a black transparent background */
+.posts tr:nth-child(even){
+  background-color: rgba(0,0,0, 0.2);
+}
+/* 9th and 10th table cells are shrunk in width to fit the update and delete images */
+.posts td:nth-child(n+9){
+  width: 60px;
+}
+/* set sizes for update and delete images */
+.posts img{
+  height: auto;
+  width: 60px;
+}
+/* signout a element stylized to represent a button */
+.aout{
+  display: flex;
+  text-decoration: none;
+  font-weight: bold;
+  border: 4px solid #FF0000;
+  background-color: #FF0000;
+  color: #FFF;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 5%;
+  margin-left: 86%;
+}
+
+/*************************************/
+/****** Styling for edit page ******/
+/************************************/
+/* main styling to define grid areas */
+.edit{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "etop"
+  "postForm"
+  "footer";
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 contains h1 and p elements */
+.etop{
+  grid-area: etop;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 20vh;
+}
+/* h1 styling to increase size and add some padding */
+.etop div h1{
+  font-size: 50px;
+  padding-bottom: 2vh;
+}
+/* section 2 contains form to edit post info */
+.postForm{
+  grid-area: postForm;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+/* form targeted */
+.postForm form{
+  display: grid;
+  /* one columns per row */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+}
+/* div elements in form have height set */
+.postForm div{
+  height: 5fr;
+  width: auto;
+}
+/* label elements targeted to alter font styling */
+.postForm label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  /* small amount of padding */
+  padding: 1vh;
+}
+/* text input padding added */
+.forumPost{
+  /*padding-right: 50%;*/
+  width: 50%;
+}
+/* margin added to edit button */
+.edit{
+  margin-top: 3%;
+}
+
+/*************************************/
+/****** Styling for create page ******/
+/************************************/
+/* main styling to define grid areas */
+.create{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "ctop"
+  "explanation"
+  "new"
+  "explanationAdmin"
+  "admin"
+  "signin"
+  "footer";
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 with image and h1 in foreground */
+.ctop{
+  grid-area: ctop;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+  /* shorter height compared to masthead */
+  height: 75vh;
+  /* image from: https://deseret.brightspotcdn.com/dims4/default/bc06057/2147483647/strip/true/crop/970x554+0+490/resize/1461x834!/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2FNLe4FhnuOAe1mtr031qjn6GXzms%3D%2F0x0%3A970x1442%2F970x1442%2Ffilters%3Afocal%28498x767%3A499x768%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F23240753%2Fimage002__14_.png */
+  background-image: url('../img/register.jpg');
+  /* image covers background and is centered */
+  background-size: cover;
+  background-position: center;
+}
+/* div containing h1 aligned in center with flex */
+.ctop div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h1 styling */
+.ctop div h1{
+  /* white text colour to be visible */
+  color: #FFF;
+  font-size: 50px;
+}
+/* section 2 with div holding h2 and p elements */
+.explanation{
+  grid-area: explanation;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+/* third child (second p element) of div reduced in size and styled in italics */
+.explanation div p:nth-child(3){
+  font-size: 12px;
+  font-style: italic;
+}
+/* section 3 with form to create new profile */
+.new{
+  grid-area: new;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+/* form targeted */
+.new form{
+  display: grid;
+  /* two columns per row */
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+}
+/* div elements of form set with 5fr height */
+.new div{
+  height: 5fr;
+  width: auto;
+}
+/* label elements targeted to alter font styling */
+.new label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  /* small amount of padding added around labels */
+  padding: 1vh;
+}
+/* margin added to submit buttons */
+.submit,
+.submit2{
+  margin-top: 3%;
+}
+/* margin added to reset buttons */
+.reset,
+.reset2{
+  margin-top: 3%;
+}
+/* section 4 with div holding h3 and p elements */
+.explanationAdmin{
+  grid-area: explanationAdmin;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 5vh;
+  border-top: 1px solid;
+}
+/* section 5 with form to create a new admin */
+.admin{
+  grid-area: admin;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+.admin form{
+  display: grid;
+  /* two columns per row */
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+}
+/* div elements of form set with 5fr height */
+.admin div{
+  height: 5fr;
+  width: auto;
+  margin-left: 5%;
+}
+/* label elements targeted to alter font styling */
+.admin label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  /* small amount of padding added around labels */
+  padding: 1vh;
+  margin-left: 5%;
+}
+/* margin added to left of submit2 and reset2 inputs */
+.submit2,
+.reset2{
+  margin-left: 5%;
+}
+/* section 6 with form for admin login */
+.signin{
+  grid-area: signin;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  border-top: 1px solid;
+}
+/* form elements targeted */
+.signin form{
+  display: grid;
+  /* two columns per row */
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+/* login button has small margin added to top */
+.login{
+  margin-top: 3%;
+}
+
+/*************************************/
+/****** Styling for read page ******/
+/************************************/
+/* main styling to define grid areas */
+.read{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "rtop"
+  "profiles"
+  "footer";
+  /* background body image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 with image and h1 in foreground */
+.rtop{
+  grid-area: rtop;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+  /* slightly less height than masthead */
+  height: 75vh;
+  /* image from: https://mickeyblog.com/wp-content/uploads/2018/04/Avengers-Infinity-War-movie.jpg */
+  background-image: url('../img/profiles.jpg');
+  /* image covers background and is centered */
+  background-size: cover;
+  background-position: center;
+}
+/* div containing h1 aligned in center with flex */
+.rtop div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  /* background image covered by slight transparency */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* h1 styling */
+.rtop div h1{
+  /* white colour to be visible over image */
+  color: #FFF;
+  font-size: 50px;
+  padding-bottom: 2vh;
+}
+/* section 2 with readable profiles */
+.profiles{
+  grid-area: profiles;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+}
+/* div containing h2 and p elements */
+.profiles div{
+  /* short height and some top and bottom padding */
+  height: 5fr;
+  width: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+/* table element has left and right margins */
+.profiles table{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* th and td elements have black borders surrounding them to represent an actual table */
+.profiles th,
+.profiles td{
+  border: 2px solid #000;
+}
+/* odd table rows have a light red transparent background */
+.profiles tr:nth-child(odd){
+  background-color: rgba(255,160,122, 0.2);
+}
+/* even table rows have a black transparent background */
+.profiles tr:nth-child(even){
+  background-color: rgba(0,0,0, 0.2);
+}
+/* 9th and 10th table cells are shrunk in width to fit the update and delete images */
+.profiles td:nth-child(n+9){
+  width: 60px;
+}
+/* set sizes for update and delete images */
+.profiles img{
+  height: auto;
+  width: 60px;
+}
+/* sign out anchor element stylized to look like a button */
+.rout{
+  display: flex;
+  text-decoration: none;
+  font-weight: bold;
+  border: 4px solid #FF0000;
+  background-color: #FF0000;
+  color: #FFF;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 5%;
+  margin-left: 86%;
+}
+
+/*************************************/
+/****** Styling for update page ******/
+/************************************/
+/* main styling to define grid areas */
+.update{
+  display: grid;
+  /* define grid layout */
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "utop"
+  "data"
+  "footer";
+  /* background image covered by slight transparency */
+  background-color: rgba(255,255,255, 0.9);
+}
+/* section 1 contains h1 and p elements */
+.utop{
+  grid-area: utop;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 20vh;
+}
+/* h1 styling to increase size and add some padding */
+.utop div h1{
+  font-size: 50px;
+  padding-bottom: 2vh;
+}
+/* section 2 contains form to update profile info */
+.data{
+  grid-area: data;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+/* form targeted */
+.data form{
+  display: grid;
+  /* two columns per row */
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+}
+/* div elements in form have height set */
+.data div{
+  height: 5fr;
+  width: auto;
+}
+/* label elements targeted to alter font styling */
+.data label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  /* small amount of padding */
+  padding: 1vh;
+}
+/* margin added to update input */
+.update{
+  margin-top: 3%;
+}
+/* margin added to top  of reset3 input */
+.reset3{
+  margin-top: 3%;
+}
